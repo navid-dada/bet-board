@@ -31,7 +31,7 @@ class BetSessionTest extends TestCase
         $sut = new \App\Models\BetSession($gameStub, 100);
 
         //act
-        $actual = $sut->GetWinningPayLines();
+        $actual = $sut->getWinningPayLines();
 
         //assert
         $this->assertEquals($expected,$actual);

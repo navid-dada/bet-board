@@ -18,9 +18,9 @@ class SlotCommand extends Command
         $boardGame = new SimpleBoardGame($boardCalculator);
         $betSession = new BetSession($boardGame, 100);
 
-        $board = $betSession->PrintBoard();
-        $payLines = $betSession->GetWinningPayLines();
-        $betAmount = $betSession->GetBetAmount();
+        $board = $betSession->printBoard();
+        $payLines = $betSession->getWinningPayLines();
+        $betAmount = $betSession->getBetAmount();
 
         $totalWin = array_reduce($payLines, function ($sum, WinningPayLine $payLine) use ($betAmount){
            $sum += ($payLine->PayFactor * $betAmount);

@@ -15,18 +15,18 @@ class BetSession
         $this->game->init();
     }
 
-    public function PrintBoard(): array
+    public function printBoard(): array
     {
         $board = $this->game->getBoard();
         return array_values($board);
     }
 
-    public function GetBetAmount(): int
+    public function getBetAmount(): int
     {
         return $this->betAmount ;
     }
 
-    public function GetWinningPayLines(): array{
+    public function getWinningPayLines(): array{
         $winingLines = array();
         $allPayLines = $this->game->getPayLines();
         foreach ($allPayLines as $payLine){
