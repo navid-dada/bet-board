@@ -3,7 +3,8 @@
 namespace App\Models\Interfaces;
 
 use App\Models\PayFactor;
-
+//Todo: maybe better to define as abstract class to force the inheritors
+// have IBoardCalculator as ctor argument
 interface IGame
 {
 
@@ -31,3 +32,12 @@ interface IGame
      */
     function calculatePayFactor(array $payLine): PayFactor;
 }
+abstract class b {
+    protected int $i;
+    public function __construct($t)
+    {
+        $i = $t;
+    }
+    public abstract function ShowMe() ;
+}
+

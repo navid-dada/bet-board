@@ -18,22 +18,22 @@ This project is written with [lumen](https://lumen.laravel.com) framework.
 
 ###Bet Session
 This class simulate a betting attempt by the machine. it can be done by any machine that implement the **IGame**
-interface;
+interface.
 
-###
+###SimpleSlotGame
+*This class simulate a 5\*3 slot machine with horizontal lines and 'W' and 'M' shaped
+pay lines by implementing **IGame** interface.*
 
+###SimpleSlotCalculator
+*This class implements the **IBoardCalculator** to provide this rules:*
 
+3 cards chain --> 0.2 <br/>
+4 card chain --> 2 <br/>
+4 card chain --> 10 <br/>
 
+###Slot Command
+This class add an artisan command to the application to run the slot machine once.
+you can run machine by this command:<br/>
+> ``php artisan slot``
 
-## Contributing
-
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
+####Enjoy your time :)
