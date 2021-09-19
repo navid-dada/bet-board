@@ -15,17 +15,32 @@ class BetSession
         $this->game->init();
     }
 
+
+    /**
+     * generate raw board content
+     * @return array
+     */
     public function printBoard(): array
     {
         $board = $this->game->getBoard();
         return array_values($board);
     }
 
+    /**
+     * return the amount of bet
+     * @return int
+     */
     public function getBetAmount(): int
     {
         return $this->betAmount ;
     }
 
+    /**
+     * get all the winning pay lines(cell indexes).
+     * including payout ratio and number of card chain (matchCount)
+     *
+     * @return array
+     */
     public function getWinningPayLines(): array{
         $winingLines = array();
         $allPayLines = $this->game->getPayLines();
