@@ -17,22 +17,22 @@ class SimpleGameCalculator implements Interfaces\IBoardCalculator
      */
     function getPayFactor(array $row): PayFactor
     {
-        $count = 1 ;
+
         $first = $row[0];
 
-        //Todo: replace with for
-        foreach (array_slice($row,1, count($row)) as $item)
+        $i=1;
+        for ( ; $i < count($row); )
         {
-            if ($item == $first){
-                $count++;
+            if ($row[$i] == $first){
+                $i++;
             }
             else{
                 break;
             }
         }
 
-        if(array_key_exists( $count, $this->payOutRatioMap)){
-            return new PayFactor($count , $this->payOutRatioMap[$count]);
+        if(array_key_exists( $i, $this->payOutRatioMap)){
+            return new PayFactor($i , $this->payOutRatioMap[$i]);
         }
         return new PayFactor(0 , 0);
     }

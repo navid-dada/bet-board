@@ -18,7 +18,7 @@ class SimpleGameBoardTest extends TestCase
         //arrange
         global $incomingParam ;
         $stub = $this->createMock(App\Models\Interfaces\IBoardCalculator::class);
-        $stub->method("GetPayFactor")
+        $stub->method("getPayFactor")
            ->with($this->callback(function($arg) { global $incomingParam; $incomingParam = $arg; return true;}))->willReturn(new \App\Models\PayFactor(5,10));
 
         $sut = new App\Models\SimpleBoardGame($stub);

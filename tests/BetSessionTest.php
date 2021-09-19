@@ -16,7 +16,7 @@ class BetSessionTest extends TestCase
         $gameStub = $this->createMock(\App\Models\Interfaces\IGame::class);
 
 
-        $gameStub->method("GetPayLines")->willReturn(
+        $gameStub->method("getPayLines")->willReturn(
             array(
                 array(0, 3, 6, 9, 12),
                 array(1, 4, 7, 10, 13),
@@ -25,7 +25,7 @@ class BetSessionTest extends TestCase
                 array(2, 4, 6, 10, 14)
             ));
 
-        $gameStub->method("CalculatePayLine")->will($this->returnCallback(array($this, 'resultGen')));
+        $gameStub->method("calculatePayFactor")->will($this->returnCallback(array($this, 'resultGen')));
 
 
         $sut = new \App\Models\BetSession($gameStub, 100);
