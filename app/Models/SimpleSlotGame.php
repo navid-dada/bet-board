@@ -6,7 +6,7 @@ use App\Models\Interfaces\IBoardCalculator;
 use App\Models\Interfaces\IGame;
 
 
-class SimpleBoardGame implements IGame
+class SimpleSlotGame implements IGame
 {
 
 

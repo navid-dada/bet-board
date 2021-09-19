@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-class SimpleGameCalculator implements Interfaces\IBoardCalculator
+class SimpleSlotCalculator implements Interfaces\IBoardCalculator
 {
 
     private array $payOutRatioMap = array(3 => 0.2, 4 => 2, 5 => 10);

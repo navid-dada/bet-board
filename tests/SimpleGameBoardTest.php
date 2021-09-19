@@ -7,7 +7,7 @@ class SimpleGameBoardTest extends TestCase
     /** @test */
     public function Init_BoardGame_Should_Fill_AllCells (){
         $stub = $this->createMock(\App\Models\Interfaces\IBoardCalculator::class);
-        $sut = new App\Models\SimpleBoardGame($stub) ;
+        $sut = new App\Models\SimpleSlotGame($stub) ;
         $sut->init() ;
         $actual = $sut->getBoard() ;
         \PHPUnit\Framework\Assert::assertArrayNotHasKey("",array_count_values(array_values($actual)));
@@ -21,7 +21,7 @@ class SimpleGameBoardTest extends TestCase
         $stub->method("getPayFactor")
            ->with($this->callback(function($arg) { global $incomingParam; $incomingParam = $arg; return true;}))->willReturn(new \App\Models\PayFactor(5,10));
 
-        $sut = new App\Models\SimpleBoardGame($stub);
+        $sut = new App\Models\SimpleSlotGame($stub);
         $sut->init();
 
         $actual = array_slice($sut->getBoard(), 0, 5);

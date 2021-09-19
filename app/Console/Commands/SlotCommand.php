@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\BetSession;
-use App\Models\SimpleBoardGame;
-use App\Models\SimpleGameCalculator;
+use App\Models\SimpleSlotGame;
+use App\Models\SimpleSlotCalculator;
 use App\Models\WinningPayLine;
 use Illuminate\Console\Command;
 
@@ -14,8 +14,8 @@ class SlotCommand extends Command
     protected $description = "Bet on board game";
 
     public function handle(){
-        $boardCalculator = new SimpleGameCalculator() ;
-        $boardGame = new SimpleBoardGame($boardCalculator);
+        $boardCalculator = new SimpleSlotCalculator() ;
+        $boardGame = new SimpleSlotGame($boardCalculator);
         $betSession = new BetSession($boardGame, 100);
 
         $board = $betSession->printBoard();

@@ -12,7 +12,7 @@ class SimpleGameCalculatorTest extends TestCase
     {
 
         //arrange
-        $sut = new \App\Models\SimpleGameCalculator();
+        $sut = new \App\Models\SimpleSlotCalculator();
 
         //act
         $actual = $sut->getPayFactor($row);
