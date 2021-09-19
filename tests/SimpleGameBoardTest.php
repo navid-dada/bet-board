@@ -28,7 +28,7 @@ class SimpleGameBoardTest extends TestCase
         $keys = $sut->GetPayLines()[0];
 
         //act
-        $result = $sut->CalculatePayLine($keys);
+        $result = $sut->CalculatePayFactor($keys);
 
         //assert
         $this->assertEquals($actual, $incomingParam);

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 class SimpleGameCalculator implements Interfaces\IBoardCalculator
 {
 

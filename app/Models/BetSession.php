@@ -30,9 +30,9 @@ class BetSession
         $winingLines = array();
         $allPayLines = $this->game->GetPayLines();
         foreach ($allPayLines as $payLine){
-            $payFactor = $this->game->CalculatePayLine($payLine);
-            if ($payFactor->SetCount >= 3){
-                array_push($winingLines, new WinningPayLine($payLine, $payFactor->SetCount, $payFactor->Factor));
+            $payFactor = $this->game->CalculatePayFactor($payLine);
+            if ($payFactor->MatchCount >= 3){
+                array_push($winingLines, new WinningPayLine($payLine, $payFactor->MatchCount, $payFactor->PayOutRatio));
             }
         }
         return $winingLines;

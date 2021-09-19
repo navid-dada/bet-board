@@ -9,6 +9,5 @@ interface IGame
     function GetBoard() : array ;
     function Init(): void;
     function GetPayLines () :array;
-    function CalculatePayLine(array $payLine): PayFactor;
-
+    function CalculatePayFactor(array $payLine): PayFactor;
 }

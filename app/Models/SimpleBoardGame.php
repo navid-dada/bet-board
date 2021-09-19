@@ -46,7 +46,7 @@ class SimpleBoardGame implements IGame
     }
 
 
-    function CalculatePayLine(array $payLine): PayFactor
+    function CalculatePayFactor(array $payLine): PayFactor
     {
         $row = array();
         foreach ($payLine as $p)
