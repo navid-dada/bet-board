@@ -24,7 +24,7 @@ class SimpleBoardGame implements IGame
     }
 
 
-    private $cards = array("9", "10", "J", "Q", "K", "A", "cat", "dog", "monkey", "bird");
+    private  $cards = array("9", "10", "J", "Q", "K", "A", "cat", "dog", "monkey", "bird");
 
     public function Init(): void
     {
@@ -38,7 +38,7 @@ class SimpleBoardGame implements IGame
         return $this->cells;
     }
 
-    function GetPayLines(): array
+    public function GetPayLines(): array
     {
         return array(array(0, 3, 6, 9, 12), array(1, 4, 7, 10, 13), array(2, 5, 8, 11, 14), array(0, 4, 8, 10, 12), array(2, 4, 6, 10, 14));
     }

@@ -15,11 +15,10 @@ class BetSession
         $this->game->Init();
     }
 
-    public function PrintBoard(): string
+    public function PrintBoard(): array
     {
         $board = $this->game->GetBoard();
-        $text = implode(",", array_values($board));
-        return '[' . $text . ']';
+        return array_values($board);
     }
 
     public function GetBetAmount(): int
@@ -29,11 +28,11 @@ class BetSession
 
     public function GetWinningPayLines(): array{
         $winingLines = array();
-        $allPayLines = $this->GetPayLines();
+        $allPayLines = $this->game->GetPayLines();
         foreach ($allPayLines as $payLine){
-            $payfactor = $this->game->CalculatePayLine($payLine);
-            if ($payfactor->SetCount >= 3){
-                array_push($winingLines, new WinningPayLine($payLine, $payfactor->SetCount, $payfactor->Factor));
+            $payFactor = $this->game->CalculatePayLine($payLine);
+            if ($payFactor->SetCount >= 3){
+                array_push($winingLines, new WinningPayLine($payLine, $payFactor->SetCount, $payFactor->Factor));
             }
         }
         return $winingLines;
