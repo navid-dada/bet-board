@@ -12,12 +12,12 @@ class BetSession
     public function __construct(IGame $game, int $betAmount = 100)
     {
         $this->game = $game;
-        $this->game->Init();
+        $this->game->init();
     }
 
     public function PrintBoard(): array
     {
-        $board = $this->game->GetBoard();
+        $board = $this->game->getBoard();
         return array_values($board);
     }
 
@@ -28,9 +28,9 @@ class BetSession
 
     public function GetWinningPayLines(): array{
         $winingLines = array();
-        $allPayLines = $this->game->GetPayLines();
+        $allPayLines = $this->game->getPayLines();
         foreach ($allPayLines as $payLine){
-            $payFactor = $this->game->CalculatePayFactor($payLine);
+            $payFactor = $this->game->calculatePayFactor($payLine);
             if ($payFactor->MatchCount >= 3){
                 array_push($winingLines, new WinningPayLine($payLine, $payFactor->MatchCount, $payFactor->PayOutRatio));
             }

@@ -28,31 +28,31 @@ class SimpleBoardGame implements IGame
 
 
 
-    public function Init(): void
+    public function init(): void
     {
         foreach ($this->cells as $key => $value) {
             $this->cells[$key] = $this->cards[rand(0, 9)];
         }
     }
 
-    public function GetBoard(): array
+    public function getBoard(): array
     {
         return $this->cells;
     }
 
-    public function GetPayLines(): array
+    public function getPayLines(): array
     {
         return array(array(0, 3, 6, 9, 12), array(1, 4, 7, 10, 13), array(2, 5, 8, 11, 14), array(0, 4, 8, 10, 12), array(2, 4, 6, 10, 14));
     }
 
 
-    function CalculatePayFactor(array $payLine): PayFactor
+    function calculatePayFactor(array $payLine): PayFactor
     {
         $row = array();
         foreach ($payLine as $p)
         {
             array_push($row, $this->cells[$p]);
         }
-        return $this->calculator->GetPayFactor($row);
+        return $this->calculator->getPayFactor($row);
     }
 }

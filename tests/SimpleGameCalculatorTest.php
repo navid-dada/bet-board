@@ -15,7 +15,7 @@ class SimpleGameCalculatorTest extends TestCase
         $sut = new \App\Models\SimpleGameCalculator();
 
         //act
-        $actual = $sut->GetPayFactor($row);
+        $actual = $sut->getPayFactor($row);
 
         //assert
         $this->assertEquals($expected, $actual);
