@@ -5,7 +5,8 @@ namespace App\Models;
 class SimpleGameCalculator implements Interfaces\IBoardCalculator
 {
 
-    private $payFactors = array(3 => 0.2, 4 => 2, 5 => 10);
+    private array $payFactors = array(3 => 0.2, 4 => 2, 5 => 10);
+
     function GetPayFactor(array $row): PayFactor
     {
         $count = 1 ;

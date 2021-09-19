@@ -6,8 +6,8 @@ use App\Models\Interfaces\IGame;
 
 class BetSession
 {
-    private $game;
-    private $betAmount = 100;
+    private IGame $game;
+    private int $betAmount = 100;
 
     public function __construct(IGame $game, int $betAmount = 100)
     {

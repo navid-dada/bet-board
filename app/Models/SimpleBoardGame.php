@@ -5,11 +5,14 @@ namespace App\Models;
 use App\Models\Interfaces\IBoardCalculator;
 use App\Models\Interfaces\IGame;
 
+
 class SimpleBoardGame implements IGame
 {
 
-    private $calculator;
-    private $cells = array(
+
+    private array $cards = array("9", "10", "J", "Q", "K", "A", "cat", "dog", "monkey", "bird");
+    private IBoardCalculator $calculator;
+    private array $cells = array(
         // row #1
         0 => "", 3 => "", 6 => "", 9 => "", 12 => "",
         // row #2
@@ -24,7 +27,6 @@ class SimpleBoardGame implements IGame
     }
 
 
-    private  $cards = array("9", "10", "J", "Q", "K", "A", "cat", "dog", "monkey", "bird");
 
     public function Init(): void
     {
