@@ -2,6 +2,7 @@
 
 
 use PHPUnit\Framework\TestCase;
+use \App\Models\SimpleSlotCalculator;
 
 class SimpleGameCalculatorTest extends TestCase
 {
@@ -12,7 +13,7 @@ class SimpleGameCalculatorTest extends TestCase
     {
 
         //arrange
-        $sut = new \App\Models\SimpleSlotCalculator();
+        $sut = new SimpleSlotCalculator();
 
         //act
         $actual = $sut->getPayFactor($row);
